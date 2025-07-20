@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Button Animation</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e1e1e, #111);
+      font-family: Arial, sans-serif;
+    }
+
+    .btn-3d {
+      position: relative;
+      padding: 20px 50px;
+      font-size: 24px;
+      color: #fff;
+      text-transform: uppercase;
+      background: #00f2ff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #008e99;
+      transition: all 0.2s ease;
+    }
+
+    .btn-3d:hover {
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #008e99;
+      background: #02c3d9;
+    }
+
+    .btn-3d:active {
+      transform: translateY(8px);
+      box-shadow: 0 0 0 #008e99;
+    }
+
+    .btn-3d::after {
+      /* content: "CLICK ME"; */
+      position: absolute;
+      left: 50%;
+      top: -50px;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: #00f2ff;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-3d:hover::after {
+      top: -70px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn-3d">Press</button>
+</body>
+</html>
